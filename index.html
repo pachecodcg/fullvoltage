@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- ADEA Leadership Institute Interview Manager v1.2 | April 8, 2026 | Built for Full Voltage, Class of 2026-27 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -176,7 +177,7 @@ h1 .he{font-size:20px}.ht-sub{font-size:10px}.hdr-r{gap:5px}
 <body>
 <div class="app" id="root"></div>
 <script>
-const SK='adea_li_v15';
+const SK='adea_li_v18';
 function defaultData(){
   const f=[
     {n:'Dr. Sobia Bilal',i:'College of Dentistry, University of Illinois Chicago',s:'UIC',e:'sbilal@uic.edu',p:'(773) 807-3240'},
@@ -189,23 +190,22 @@ function defaultData(){
     mentor:{n:'Dr. Carroll Ann Trotman',t:'Dean, College of Dentistry, The Ohio State University',e:'trotman.13@osu.edu',p:'(410) 948-1615'},
     fellows:f,
     stk:{parent:[
-      {p:'Provost',e:{'UIC':{n:'Karen Colley',t:'Provost and Vice Chancellor for Academic Affairs',s:'pending'},'Rutgers':{n:'Robert Johnson',t:'Provost / Chancellor',s:'confirmed'},'Michigan':{n:'Laurie McCauley',t:'Provost',s:'pending'},'Columbia':{n:'',t:'',s:'tbd'},'Augusta':{n:'Dr. Maggy Tomova',t:'EVP for Academic Affairs and Provost',s:'pending'}}},
+      {p:'Provost / Chancellor',e:{'UIC':{n:'Karen Colley',t:'Provost and Vice Chancellor for Academic Affairs',s:'pending'},'Rutgers':{n:'Robert Johnson',t:'Provost / Chancellor',s:'confirmed'},'Michigan':{n:'Laurie McCauley',t:'Provost',s:'pending'},'Columbia':{n:'',t:'',s:'tbd'},'Augusta':{n:'Dr. Maggy Tomova',t:'EVP for Academic Affairs and Provost',s:'pending'}}},
       {p:'VP Research',e:{'UIC':{n:'Joanna Groden',t:'Vice Chancellor for Research',s:'pending'},'Rutgers':{n:'Kathy Scotto',t:'Vice President of Research',s:'confirmed'},'Michigan':{n:'Arthur Lupia',t:'Vice President of Research',s:'pending'},'Columbia':{n:'',t:'',s:'tbd'},'Augusta':{n:'TBD',t:'EVP for Research and Innovation (prev. Dr. Michael Diamond)',s:'tbd'}}},
-      {p:'VP Health Affairs / Academic Affairs',e:{'UIC':{n:'Robert A. Barish',t:'Vice Chancellor for Health Affairs',s:'pending'},'Rutgers':{n:'Bishr Omry',t:'Vice President for Academic Affairs',s:'confirmed'},'Michigan':{n:'',t:'Vice President for Academic Affairs',s:'tbd'},'Columbia':{n:'',t:'',s:'tbd'},'Augusta':{n:'Dr. David Hess',t:'Dean of MCG and EVP for Medical Affairs and Integration',s:'pending'}}}
+      {p:'VP Health Affairs / Academic Affairs',e:{'UIC':{n:'Robert A. Barish',t:'Vice Chancellor for Health Affairs',s:'pending'},'Rutgers':{n:'Bishr Omry',t:'Vice President for Academic Affairs',s:'confirmed'},'Michigan':{n:'Dr. Friese',t:'Vice President for Academic Affairs',s:'pending'},'Columbia':{n:'',t:'',s:'tbd'},'Augusta':{n:'Dr. David Hess',t:'Dean of MCG and EVP for Medical Affairs and Integration',s:'pending'}}}
     ],community:[
       {p:'ADA Trustee',e:{'UIC':{n:'Dr. Susan Becker Doroshow',t:'ADA Trustee',s:'pending'},'Rutgers':{n:'Robert (Bob) Wilson',t:'ADA Trustee District 4',s:'confirmed'},'Michigan':{n:'Mark B. Donald',t:'ADA Trustee District 4',s:'pending'},'Columbia':{n:'',t:'',s:'tbd'},'Augusta':{n:'Dr. Jimmy Hollingsworth',t:'ADA Trustee, 5th District',s:'pending'}}},
       {p:'Exec Dir, State Dental Society',e:{'UIC':{n:'Eric Larson',t:'Executive Director, Illinois State Dental Society',s:'pending'},'Rutgers':{n:'Reva Brennan',t:'CEO, New Jersey Dental Association',s:'confirmed'},'Michigan':{n:'John Tramontana',t:'Exec Director and CEO, Michigan Dental Association',s:'pending'},'Columbia':{n:'',t:'',s:'tbd'},'Augusta':{n:'Kristen Morgan',t:'Exec Director/CEO, Georgia Dental Association',s:'pending'}}}
-    ]},q:defaultQ(),ra:{},cl:defaultCl()};
+    ]},q:defaultQ(),ra:{analyst_0:'',analyst_4:'',convener_1:'',writer_2:'',other_3:'Reviewer'},cl:defaultCl()};
 }
-function buildStk(fellows){const stk={parent:[],community:[]};['Provost','VP Research','VP Health Affairs / Academic Affairs'].forEach(p=>{const e={};fellows.forEach(f=>{e[f.s]={n:'',t:'',s:'tbd'}});stk.parent.push({p,e})});['ADA Trustee','Exec Dir, State Dental Society'].forEach(p=>{const e={};fellows.forEach(f=>{e[f.s]={n:'',t:'',s:'tbd'}});stk.community.push({p,e})});return stk}
+function buildStk(fellows){const stk={parent:[],community:[]};['Provost / Chancellor','VP Research','VP Health Affairs / Academic Affairs'].forEach(p=>{const e={};fellows.forEach(f=>{e[f.s]={n:'',t:'',s:'tbd'}});stk.parent.push({p,e})});['ADA Trustee','Exec Dir, State Dental Society'].forEach(p=>{const e={};fellows.forEach(f=>{e[f.s]={n:'',t:'',s:'tbd'}});stk.community.push({p,e})});return stk}
 function defaultQ(){return JSON.parse(JSON.stringify({
-'Provost':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What types of interactions occur between the health science units and the other academic units?','What are the main issues that tend to be contentious between them?','What opportunities exist for stronger collaboration between health sciences programs and other academic programs?','What are the biggest challenges faculty face today in advancing their careers?']},
-'VP Academic Affairs':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What are the major faculty issues in the university?','What are the reporting requirements to your office, and what actions are taken on them?','How are new academic programs initiated?','What would you like to see the dental school do differently or in addition to what it does now?']},
-'VP Research':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What are the goals and objectives of the university for technology transfer activities?','What are the major trends in research administration at the university level?','How is the university integrating AI, big data, and digital technologies into research?','What mechanisms exist to promote interdisciplinary collaboration across colleges, including dentistry?']},
-'VP Health Affairs':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['How do you envision strengthening interprofessional education and practice across medicine, dentistry, pharmacy, nursing, and public health?','What is the impact of current health care financing mechanisms on the Medical Center?','What structural or cultural barriers exist to deeper integration, and how are they being addressed?','How can dental leaders become more involved in broader healthcare leadership and policy discussions?']},
-'President':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What would you most like the public to know about the university?','How are policies affecting all of the constituent units developed and implemented?','On what basis is the division of resources among the constituent schools and units decided?','What would you like to see the dental school do differently or in addition to what it does now?']},
-'ADA Trustee':{c:['What are the most important things your role/organization does for the profession?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What do you see as the most important issues for dental education in the coming years?','Other than membership in the ADA, in what areas would you like to see more interaction between the school and organized dentistry?','How can dental schools and state dental associations work together to better prepare students for practice?','What strategies are being used to improve access to dental care in underserved communities?']},
-'Exec Dir, State Dental Society':{c:['What are the most important things your organization does for the profession?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What does your membership like most about the dental school?','What do they complain about with respect to the school or its activities?','How could relationships between the State Dental Society and the dental school be made more mutually supportive?','How is organized dentistry evolving to meet the needs of dental professionals and the communities they serve?']}
+'Provost':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What are the biggest challenges faculty face today in advancing their careers?','What interactions occur and opportunities exist for stronger collaboration between health sciences programs and other academic programs?','What are the main issues that tend to be contentious between them?','What would you like to see the dental school do differently or in addition to what it does now?']},
+'VP Academic Affairs':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What are the major faculty issues in the university?','How are new academic programs initiated?','What would you like to see the dental school do differently or in addition to what it does now?','What are the reporting requirements to your office, and what actions are taken on them?']},
+'VP Research':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['How is the university integrating AI, big data, and digital technologies into research?','What advice would you give to faculty aspiring to research leadership roles?','How do you manage and structure the research administration at the university level to meet the evolving challenges?','What mechanisms exist to promote interdisciplinary collaboration across colleges, including dentistry?','What are the goals and objectives of the university for technology transfer activities?']},
+'VP Health Affairs':{c:['What are the most important things you/your unit do for the university?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['How do you envision strengthening interprofessional education and practice across medicine, dentistry, pharmacy, nursing, and public health?','How can dental leaders become more involved in broader healthcare leadership and policy discussions?','What structural or cultural barriers exist to deeper integration, and how are they being addressed?','What is the impact of current health care financing mechanisms on the Medical Center?']},
+'ADA Trustee':{c:['What are the most important things your role/organization does for the profession?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What do you see as the most important issues for dental education in the coming years?','How can dental schools and state dental associations work together to better prepare students for practice and organized dentistry?','What strategies are being used to improve access to dental care in underserved communities?','What trends in practice are you seeing that dental schools have been slow to respond to, or vice-versa?']},
+'Exec Dir, State Dental Society':{c:['What are the most important things your organization does for the profession?','What is your perception of the dental school?','What in your position provides the most enjoyment or satisfaction for you?'],s:['What does your membership like most about the dental school? What would they like to see improved?','How supportive do you see the relationships between the State Dental Society and the dental school?','How is organized dentistry evolving to meet the needs of recent graduates and the communities they serve?','What types of information about the dental school would you like to have in more detail or greater frequency?']}
 }))}
 function defaultCl(){return JSON.parse(JSON.stringify([
 {d:'April 11, 2026',t:'Post interview plan with final list of interviewees and questions on ADEA Connect',x:false},
@@ -278,7 +278,8 @@ function render(){
 <p>Email summary to the group, or print interview sheets (one page per position with space for notes).</p>
 <button class="submit-btn" onclick="printSheets()">Print Interview Sheets</button>
 <button class="submit-btn" onclick="sendEmail()">Email Summary</button>
-<button class="reset-btn" onclick="resetAll()">Reset All Data</button></div>`;
+<button class="reset-btn" onclick="resetAll()">Reset All Data</button>
+<span style="font-size:9px;color:var(--text3);margin-left:auto">v1.2 / April 8, 2026</span></div>`;
 
   document.getElementById('root').innerHTML=h;V.stk();
 }
@@ -334,56 +335,48 @@ core:[
 'What would you like to see the dental school / allied program do differently or in addition to what it does now?'
 ],
 'Provost':[
-'What types of interactions occur between the health science units and the other academic units in the university?',
-'What are the main issues that tend to be contentious between them?',
-'What opportunities exist for stronger collaboration between health sciences programs and other academic programs?',
 'What are the biggest challenges faculty face today in advancing their careers?',
+'What interactions occur and opportunities exist for stronger collaboration between health sciences programs and other academic programs?',
+'What are the main issues that tend to be contentious between them?',
+'What would you like to see the dental school do differently or in addition to what it does now?',
 'Looking back, what is one leadership decision you wish you had handled differently, and what did that teach you?'
 ],
 'VP Academic Affairs':[
 'What are the major faculty issues in the university?',
-'What are the reporting requirements to your office, and what actions are taken on them?',
 'How are new academic programs initiated?',
-'What would you like to see the dental school do differently or in addition to what it does now?'
+'What would you like to see the dental school do differently or in addition to what it does now?',
+'What are the reporting requirements to your office, and what actions are taken on them?'
 ],
 'VP Research':[
+'How is the university integrating AI, big data, and digital technologies into research?',
+'What advice would you give to faculty aspiring to research leadership roles?',
+'How do you manage and structure the research administration at the university level to meet the evolving challenges?',
+'What mechanisms exist to promote interdisciplinary collaboration across colleges, including dentistry?',
 'What are the goals and objectives of the university for technology transfer activities?',
 'What proportion of your unit\'s activities is spent in assuring compliance with federal, state and other government regulations?',
-'What are the major trends in research administration at the university level?',
-'How is the university integrating AI, big data, and digital technologies into research?',
-'What mechanisms exist to promote interdisciplinary collaboration across colleges, including dentistry?',
-'What role do health informatics and precision medicine play in the institution\'s research agenda?',
-'What advice would you give to faculty aspiring to research leadership roles?'
+'What role do health informatics and precision medicine play in the institution\'s research agenda?'
 ],
 'VP Health Affairs':[
-'How well and in what capacities does the dental school interact with the other health sciences units?',
-'What is the impact of current health care financing mechanisms on the Medical Center?',
 'How do you envision strengthening interprofessional education and practice across medicine, dentistry, pharmacy, nursing, and public health?',
-'What structural or cultural barriers exist to deeper integration, and how are they being addressed?',
 'How can dental leaders become more involved in broader healthcare leadership and policy discussions?',
+'What structural or cultural barriers exist to deeper integration, and how are they being addressed?',
+'What is the impact of current health care financing mechanisms on the Medical Center?',
+'How well and in what capacities does the dental school interact with the other health sciences units?',
 'What role does the institution play in shaping state or national health policy?'
-],
-'President':[
-'What would you most like the public to know about the university?',
-'How are policies affecting all of the constituent units developed and implemented?',
-'How is compliance evaluated?',
-'On what basis is the division of resources among the constituent schools and units decided?',
-'What would you like to see the dental school do differently or in addition to what it does now?'
 ],
 'ADA Trustee':[
 'What do you see as the most important issues for dental education in the coming years?',
-'Other than membership in the ADA, in what areas would you like to see more interaction between the school and organized dentistry?',
-'How can dental schools and state dental associations work together to better prepare students for practice?',
+'How can dental schools and state dental associations work together to better prepare students for practice and organized dentistry?',
 'What strategies are being used to improve access to dental care in underserved communities?',
-'What trends in practice are you seeing that dental schools have been slow to respond to?'
+'What trends in practice are you seeing that dental schools have been slow to respond to, or vice-versa?',
+'Other than membership in the ADA, in what areas would you like to see more interaction between the school and organized dentistry?'
 ],
 'Exec Dir, State Dental Society':[
-'What does your membership like most about the dental school?',
-'What do they complain about with respect to the school or its activities?',
-'How could relationships between the State Dental Society and the dental school be made more mutually supportive?',
-'How is organized dentistry evolving to meet the needs of dental professionals and the communities they serve?',
-'What role should professional organizations play in supporting recent graduates and early-career dentists?',
-'What types of information about the dental school would you like to have in more detail or greater frequency?'
+'What does your membership like most about the dental school? What would they like to see improved?',
+'How supportive do you see the relationships between the State Dental Society and the dental school?',
+'How is organized dentistry evolving to meet the needs of recent graduates and the communities they serve?',
+'What types of information about the dental school would you like to have in more detail or greater frequency?',
+'What role should professional organizations play in supporting recent graduates and early-career dentists?'
 ]
 };
 
@@ -475,6 +468,18 @@ function sendEmail(){
   b+='\nMENTOR: '+D.mentor.n+(D.mentor.t?', '+D.mentor.t:'')+(D.mentor.e?' ('+D.mentor.e+')':'')+'\n';
   b+='\nSTAKEHOLDERS:\n';
   ['parent','community'].forEach(sec=>{b+='\n'+sec.toUpperCase()+':\n';D.stk[sec].forEach(r=>{b+=r.p+':\n';D.fellows.forEach(f=>{const e=r.e[f.s];if(e&&e.n)b+='  '+f.s+': '+e.n+' - '+e.t+' ('+e.s+')\n'})})});
+  b+='\nTEAM ROLES:\n';
+  const roleNames={analyst:'Analyst',convener:'Convener',writer:'Writer (Summary of Findings)',other:'Other'};
+  ['analyst','convener','writer','other'].forEach(rk=>{
+    const assigned=[];
+    D.fellows.forEach((f,fi)=>{
+      if(D.ra[rk+'_'+fi]!==undefined){
+        const desc=D.ra[rk+'_'+fi];
+        assigned.push(f.n+(desc?' - '+desc:''));
+      }
+    });
+    if(assigned.length)b+=roleNames[rk]+': '+assigned.join(', ')+'\n';
+  });
   b+='\nQUESTIONS:\n';
   Object.keys(D.q).forEach(role=>{b+='\n'+role+':\n';let n=1;D.q[role].c.forEach(q=>{b+=n+++'. [Core] '+q+'\n'});D.q[role].s.forEach(q=>{b+=n+++'. [Specific] '+q+'\n'})});
   window.location.href='mailto:'+emails.join(',')+
