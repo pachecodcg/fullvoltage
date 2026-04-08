@@ -275,8 +275,9 @@ function render(){
 <div id="stk" class="pn active"></div><div id="qst" class="pn"></div><div id="rol" class="pn"></div><div id="tln" class="pn"></div>`;
 
   h+=`<div class="foot">
-<p>Compile all data into a summary email to fellows and mentor.</p>
-<button class="submit-btn" onclick="sendEmail()">Email Summary to the Group</button>
+<p>Email summary to the group, or print interview sheets (one page per position with space for notes).</p>
+<button class="submit-btn" onclick="printSheets()">Print Interview Sheets</button>
+<button class="submit-btn" onclick="sendEmail()">Email Summary</button>
 <button class="reset-btn" onclick="resetAll()">Reset All Data</button></div>`;
 
   document.getElementById('root').innerHTML=h;V.stk();
@@ -396,6 +397,78 @@ function copyFB(id){
     const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);
     document.execCommand('copy');sel.removeAllRanges();
   });
+}
+
+function printSheets(){
+  const roles=Object.keys(D.q);
+  let html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Interview Sheets - ${D.groupName}</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito Sans',Arial,sans-serif;color:#1a2a30}
+@page{size:letter;margin:0.6in 0.7in}
+.sheet{page-break-after:always;height:100%;display:flex;flex-direction:column}
+.sheet:last-child{page-break-after:auto}
+.sheet-hdr{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #197589;padding-bottom:10px;margin-bottom:16px}
+.sheet-hdr h1{font-size:16px;font-weight:800;color:#197589;letter-spacing:.5px}
+.sheet-hdr h2{font-size:12px;font-weight:600;color:#526068;margin-top:2px}
+.sheet-hdr .meta{text-align:right;font-size:9px;color:#8a949a;line-height:1.5}
+.sheet-hdr .meta strong{color:#1a2a30}
+.info-row{display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+.info-field{flex:1;min-width:180px}
+.info-label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#8a949a;margin-bottom:2px}
+.info-line{border-bottom:1px solid #d4d9dd;padding:4px 0;font-size:11px;min-height:20px}
+.q-section-label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#fff;background:#197589;padding:4px 8px;border-radius:3px;display:inline-block;margin-bottom:8px;margin-top:4px}
+.q-section-label.spec{background:#588234}
+.q-item{display:flex;gap:8px;margin-bottom:0;padding:6px 0;border-bottom:1px solid #eef0f2}
+.q-num{font-size:10px;font-weight:800;color:#197589;min-width:18px;padding-top:1px}
+.q-item.spec .q-num{color:#588234}
+.q-text{font-size:11px;line-height:1.4;flex:1}
+.notes-area{margin-top:4px;flex:1;display:flex;flex-direction:column}
+.notes-label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#8a949a;margin-bottom:4px}
+.notes-lines{flex:1;min-height:60px}
+.notes-line{border-bottom:1px solid #e8eaec;height:22px}
+.footer-line{font-size:8px;color:#b0b8be;text-align:center;margin-top:8px;padding-top:6px;border-top:1px solid #e8eaec}
+</style></head><body>`;
+
+  roles.forEach(role=>{
+    const q=D.q[role];
+    html+=`<div class="sheet">
+<div class="sheet-hdr">
+<div><h1>${role}</h1><h2>ADEA Leadership Institute Interview</h2></div>
+<div class="meta"><strong>${D.groupName}</strong><br>Class of ${D.classYear}<br>Date: _______________</div>
+</div>
+<div class="info-row">
+<div class="info-field"><div class="info-label">Interviewee Name</div><div class="info-line"></div></div>
+<div class="info-field"><div class="info-label">Title / Position</div><div class="info-line"></div></div>
+<div class="info-field"><div class="info-label">Institution</div><div class="info-line"></div></div>
+</div>
+<div class="info-row">
+<div class="info-field"><div class="info-label">Interviewer</div><div class="info-line"></div></div>
+<div class="info-field"><div class="info-label">Interview Method (in person / phone / video)</div><div class="info-line"></div></div>
+<div class="info-field"><div class="info-label">Duration</div><div class="info-line"></div></div>
+</div>
+<div class="q-section-label">Core Questions (shared)</div>`;
+    let n=1;
+    q.c.forEach(qt=>{
+      html+=`<div class="q-item"><div class="q-num">${n++}.</div><div class="q-text">${qt}</div></div>`;
+    });
+    html+=`<div class="q-section-label spec" style="margin-top:10px">Position-Specific Questions</div>`;
+    q.s.forEach(qt=>{
+      html+=`<div class="q-item spec"><div class="q-num">${n++}.</div><div class="q-text">${qt}</div></div>`;
+    });
+    html+=`<div class="notes-area"><div class="notes-label" style="margin-top:12px">Additional Notes</div><div class="notes-lines">`;
+    for(let i=0;i<6;i++)html+=`<div class="notes-line"></div>`;
+    html+=`</div></div>
+<div class="footer-line">ADEA Leadership Institute Class of ${D.classYear} / ${D.groupName} / Confidential: Comments reported in aggregate only</div>
+</div>`;
+  });
+
+  html+=`</body></html>`;
+  const w=window.open('','_blank');
+  w.document.write(html);
+  w.document.close();
+  setTimeout(()=>{w.print()},300);
 }
 
 render();
