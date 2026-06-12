@@ -1,4 +1,159 @@
 <!DOCTYPE html>
+<!-- Full Voltage Hub | ADEA LI Class of 2026-27 | Combines Initial Planning + Interviews' Summary -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Full Voltage / ADEA Leadership Institute</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--teal:#197589;--green:#588234;--orange:#f59c36;--bg:#f2f4f5;--surface:#fff;--surface2:#f0f2f4;--border:#d4d9dd;--text:#1a2a30;--text2:#526068;--text3:#8a949a;--teal-dk:#0d4f5e;--orange-dk:#c07820;--accent-soft:rgba(25,117,137,.07);--green-soft:rgba(88,130,52,.08);--orange-soft:rgba(245,156,54,.08);--r:8px;--r2:10px;--sh:0 1px 2px rgba(0,0,0,.05);--sh2:0 3px 10px rgba(0,0,0,.07);--sh3:0 8px 26px rgba(13,79,94,.13)}
+html,body{height:100%}
+body{font-family:'Nunito Sans',Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;min-height:100vh}
+.view{display:none}.view.active{display:block}
+
+/* ===== Landing ===== */
+#home{max-width:880px;margin:0 auto;padding:30px 24px 50px}
+.hero{background:linear-gradient(135deg,#14626e,var(--teal) 52%,#1a8a9e);color:#fff;border-radius:14px;padding:34px 32px;box-shadow:var(--sh3);margin-bottom:26px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;background:radial-gradient(circle,rgba(255,255,255,.10),transparent 70%);pointer-events:none}
+.hero-top{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.wm .a{font-size:10px;letter-spacing:4.5px;font-weight:700;opacity:.6}
+.wm .b{font-size:8px;letter-spacing:1.8px;opacity:.4;margin-top:2px}
+.hdiv{width:1px;height:42px;background:rgba(255,255,255,.18)}
+.hero h1{font-size:30px;font-weight:800;letter-spacing:2px;display:flex;align-items:center;gap:12px;text-shadow:0 1px 4px rgba(0,0,0,.12)}
+.hero .sub{font-size:12px;opacity:.72;margin-top:5px;font-weight:400;letter-spacing:.3px}
+.hero .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.hero .chip{background:rgba(255,255,255,.12);padding:5px 13px;border-radius:14px;font-size:10px;font-weight:700;letter-spacing:.3px;display:flex;align-items:center;gap:6px}
+.hero .chip::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+.chip.a{color:#c8e8ff}.chip.b{color:#ffe0a0}.chip.c{color:#c8ffd0}
+
+.lead{font-size:13px;color:var(--text2);line-height:1.6;margin:0 4px 20px;padding:0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:24px 24px 20px;box-shadow:var(--sh);cursor:pointer;transition:.18s;display:flex;flex-direction:column;position:relative;overflow:hidden;text-align:left}
+.card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px}
+.card.one::before{background:var(--teal)}
+.card.two::before{background:var(--orange)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--teal)}
+.card.two:hover{border-color:var(--orange)}
+.card .ic{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:14px}
+.card.one .ic{background:var(--accent-soft);color:var(--teal)}
+.card.two .ic{background:var(--orange-soft);color:var(--orange-dk)}
+.card .kick{font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--text3);margin-bottom:5px}
+.card h2{font-size:18px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:8px}
+.card p{font-size:12px;color:var(--text2);line-height:1.6;flex:1;margin-bottom:16px}
+.card .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.card .mtag{font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:6px;background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
+.card .go{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;align-self:flex-start;color:#fff;padding:9px 18px;border-radius:var(--r);transition:.15s}
+.card.one .go{background:var(--teal)}
+.card.one:hover .go{background:var(--teal-dk)}
+.card.two .go{background:var(--orange)}
+.card.two:hover .go{background:var(--orange-dk)}
+.card .go .ar{transition:transform .15s}
+.card:hover .go .ar{transform:translateX(3px)}
+.newbadge{position:absolute;top:14px;right:14px;background:var(--orange);color:#fff;font-size:9px;font-weight:800;letter-spacing:1.4px;padding:4px 11px;border-radius:20px;text-transform:uppercase;z-index:2;box-shadow:0 2px 6px rgba(245,156,54,.45);animation:newpulse 2.2s ease-in-out infinite}
+@keyframes newpulse{0%,100%{transform:scale(1);box-shadow:0 2px 6px rgba(245,156,54,.45)}50%{transform:scale(1.07);box-shadow:0 4px 13px rgba(245,156,54,.6)}}
+.lfoot{text-align:center;margin-top:30px;font-size:10px;color:var(--text3);letter-spacing:.3px}
+
+/* ===== Frame view ===== */
+#frame{position:fixed;inset:0;display:none;flex-direction:column;background:var(--bg)}
+#frame.active{display:flex}
+.nav{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border-bottom:1px solid var(--border);padding:9px 16px;box-shadow:var(--sh);z-index:5}
+.nav-l{display:flex;align-items:center;gap:12px;min-width:0}
+.back{display:inline-flex;align-items:center;gap:7px;background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-family:inherit;font-size:12px;font-weight:700;padding:7px 14px;border-radius:var(--r);cursor:pointer;transition:.15s;white-space:nowrap}
+.back:hover{border-color:var(--teal);color:var(--teal);background:var(--accent-soft)}
+.nav-brand{display:flex;align-items:center;gap:8px;min-width:0}
+.nav-brand .lbl{font-size:9px;font-weight:800;letter-spacing:2px;color:var(--text3);text-transform:uppercase}
+.nav-brand .nm{font-size:13px;font-weight:800;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-chip{flex-shrink:0;font-size:10px;font-weight:800;letter-spacing:.4px;padding:5px 13px;border-radius:13px;text-transform:uppercase}
+.nav-chip.one{background:var(--accent-soft);color:var(--teal)}
+.nav-chip.two{background:var(--orange-soft);color:var(--orange-dk)}
+.frames{flex:1;position:relative;min-height:0}
+.frames iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:var(--bg)}
+.frames iframe.active{display:block}
+@media(max-width:560px){
+#home{padding:22px 14px 40px}
+.hero{padding:26px 22px}.hero h1{font-size:24px}
+.cards{grid-template-columns:1fr}
+.nav-brand .nm{font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<div id="home" class="view active">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="wm"><div class="a">ADEA</div><div class="b">THE VOICE OF DENTAL EDUCATION</div></div>
+      <div class="hdiv"></div>
+    </div>
+    <h1>
+      <svg width="28" height="34" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 2L6 21h9.5l-2.5 15L27 16H17L19.5 2z" fill="#f59c36" stroke="#e08a20" stroke-width=".6" stroke-linejoin="round"/></svg>
+      FULL VOLTAGE
+    </h1>
+    <div class="sub">ADEA Leadership Institute &middot; Class of 2026&ndash;27</div>
+    <div class="chips">
+      <div class="chip a">5 Institutions</div>
+      <div class="chip b">23 Interviewees</div>
+      <div class="chip c">Peer Group Project</div>
+    </div>
+  </div>
+
+  <p class="lead">Two parts of the Full Voltage peer group project. Choose a section to open it.</p>
+
+  <div class="cards">
+    <div class="card one" onclick="go('planning')">
+      <h2>Initial Planning</h2>
+      <p>The interactive interview manager. Track stakeholders by institution, build and edit interview questions by role, assign team responsibilities, and follow the timeline to submission.</p>
+      <div class="meta">
+        <span class="mtag">Stakeholders</span>
+        <span class="mtag">Questions</span>
+        <span class="mtag">Team Roles</span>
+        <span class="mtag">Timeline</span>
+      </div>
+      <span class="go">Open Planning <span class="ar">&rarr;</span></span>
+    </div>
+
+    <div class="card two" onclick="go('summary')">
+      <span class="newbadge">New</span>
+      <h2>Interviews' Summary</h2>
+      <p>The thematic analysis dashboard. Explore theme frequency across 23 interviews, the deep dive into financial, AI, and access patterns, and the take-home findings. Includes the full written report.</p>
+      <div class="meta">
+        <span class="mtag">Overview</span>
+        <span class="mtag">Deep Dive</span>
+        <span class="mtag">Take Homes</span>
+        <span class="mtag">.docx Report</span>
+      </div>
+      <span class="go">Open Summary <span class="ar">&rarr;</span></span>
+    </div>
+  </div>
+
+  <div class="lfoot">Full Voltage Peer Group &middot; ADEA Leadership Institute &middot; 2026&ndash;27</div>
+</div>
+
+<!-- ============ FRAME VIEW ============ -->
+<div id="frame" class="view">
+  <div class="nav">
+    <div class="nav-l">
+      <button class="back" onclick="go('home')">&larr; Sections</button>
+      <div class="nav-brand">
+        <span class="lbl">Full Voltage</span>
+        <span class="nm" id="navName"></span>
+      </div>
+    </div>
+    <span class="nav-chip" id="navChip"></span>
+  </div>
+  <div class="frames">
+    <iframe id="if-planning" title="Initial Planning"></iframe>
+    <iframe id="if-summary" title="Interviews' Summary"></iframe>
+  </div>
+</div>
+
+<!-- ============ Embedded apps (raw HTML, loaded into iframes) ============ -->
+<script type="text/html-template" id="src-planning"><!DOCTYPE html>
 <!-- ADEA Leadership Institute Interview Manager v1.2 | April 8, 2026 | Built for Full Voltage, Class of 2026-27 -->
 <html lang="en">
 <head>
@@ -599,6 +754,259 @@ body{font-family:'Nunito Sans',Arial,sans-serif;color:#1a2a30}
 }
 
 render();
+<\/script>
+</body>
+</html>
+</script>
+<script type="text/html-template" id="src-summary"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Voltage / Thematic Analysis</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#197589;--green:#588234;--orange:#f59c36;--bg:#f2f4f5;--surface:#fff;--surface2:#f0f2f4;--border:#d4d9dd;--text:#1a2a30;--text2:#526068;--text3:#8a949a;--accent-soft:rgba(25,117,137,.07);--accent-med:rgba(25,117,137,.14);--green-soft:rgba(88,130,52,.08);--green-med:rgba(88,130,52,.16);--orange-soft:rgba(245,156,54,.08);--orange-med:rgba(245,156,54,.18);--teal-dk:#0d4f5e;--teal-lt:#2a9bb5;--teal-mute:#4a7a86;--green-dk:#3d5a24;--green-lt:#6fa040;--orange-dk:#c07820;--orange-dp:#9e6a30;--r:8px;--r2:10px;--sh:0 1px 2px rgba(0,0,0,.05);--sh2:0 3px 10px rgba(0,0,0,.07)}
+body{font-family:'Nunito Sans',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+.app{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+.hdr{background:linear-gradient(135deg,#14626e,var(--teal) 50%,#1a8a9e);color:#fff;border-radius:var(--r2);padding:20px 28px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;box-shadow:var(--sh2)}
+.hdr-l{display:flex;align-items:center;gap:18px}
+.am .wm{font-size:10px;letter-spacing:4.5px;font-weight:700;opacity:.6}.am .tg{font-size:8px;letter-spacing:1.8px;opacity:.4;margin-top:2px}
+.hdiv{width:1px;height:48px;background:rgba(255,255,255,.18)}
+.ht{display:flex;align-items:center;gap:10px}.ht h1{font-size:26px;font-weight:800;letter-spacing:1.5px;text-shadow:0 1px 4px rgba(0,0,0,.12)}.ht-sub{font-size:11px;opacity:.6;margin-top:3px}
+.hdr-r{display:flex;gap:8px;flex-wrap:wrap}
+.ch{padding:5px 12px;border-radius:14px;font-size:10px;font-weight:700;display:flex;align-items:center;gap:5px;letter-spacing:.3px}.ch::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}.ch.a{background:rgba(255,255,255,.12);color:#c8e8ff}.ch.b{background:rgba(255,255,255,.12);color:#ffe0a0}.ch.c{background:rgba(255,255,255,.12);color:#c8ffd0}
+.tabs{display:flex;margin-bottom:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+.tab{flex:1;padding:12px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text3);transition:.15s;border:none;background:none;text-align:center;border-right:1px solid var(--border);position:relative}.tab:last-child{border-right:none}.tab:hover{color:var(--text);background:var(--surface2)}.tab.active{color:#fff;background:var(--teal)}.tab.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:32px;height:2.5px;background:var(--orange);border-radius:2px 2px 0 0}
+.pn{display:none}.pn.active{display:block}
+.sd{font-size:12px;color:var(--text2);margin-bottom:14px;line-height:1.6;padding:10px 14px;background:var(--accent-soft);border-left:3px solid var(--teal);border-radius:0 5px 5px 0}.sd.w{background:var(--orange-soft);border-left-color:var(--orange);color:#7a5500}.sd b,.sd strong{color:var(--text)}
+.sst{font-size:14px;font-weight:800;color:var(--teal);margin:22px 0 10px;padding:6px 0;border-bottom:2px solid var(--teal)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.mc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--sh);text-align:center}.mc .v{font-size:30px;font-weight:800;color:var(--teal)}.mc .l{font-size:10px;color:var(--text3);font-weight:600;margin-top:3px}
+.tg2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.tc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;box-shadow:var(--sh);border-left:4px solid var(--teal);transition:.15s}.tc:hover{box-shadow:var(--sh2)}.tc .nm{font-size:14px;font-weight:800;color:var(--text);line-height:1.3;margin-bottom:4px}
+.badge{font-size:9px;padding:3px 9px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;display:inline-block}
+.badge.u{background:var(--green-med);color:var(--green)}.badge.s{background:var(--accent-med);color:var(--teal)}.badge.e{background:rgba(13,79,94,.1);color:var(--teal-dk)}.badge.x{background:var(--orange-med);color:var(--orange-dk)}.badge.n{background:rgba(74,122,134,.1);color:var(--teal-mute)}.badge.r{background:rgba(192,120,32,.12);color:var(--orange-dk)}
+.pv{font-size:26px;font-weight:800;margin:2px 0}.ps{font-size:11px;color:var(--text3);margin-bottom:8px}
+.bf{height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;margin-bottom:10px}.bf i{display:block;height:100%;border-radius:3px}
+.tags{display:flex;flex-wrap:wrap;gap:4px}.tag{font-size:9.5px;padding:3px 8px;background:var(--surface2);border-radius:4px;color:var(--text2);border:1px solid var(--border);font-weight:600}
+.br{display:flex;align-items:center;gap:10px;margin-bottom:8px}.bl{width:140px;text-align:right;font-size:11px;font-weight:700;color:var(--text2);line-height:1.25;flex-shrink:0}
+.bt{flex:1;height:24px;background:var(--surface2);border-radius:4px;overflow:hidden}.bi{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-size:10px;font-weight:800;color:#fff;min-width:36px}.bv{font-size:11px;font-weight:800;color:var(--text2);width:50px;flex-shrink:0}
+.sw{overflow-x:auto;margin-bottom:14px;border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--border)}
+table.st{width:100%;border-collapse:collapse;background:var(--surface)}table.st th{background:var(--teal);color:#fff;padding:10px 12px;text-align:center;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;line-height:1.3}table.st th:first-child{text-align:left;padding-left:14px}table.st td{padding:9px 12px;font-size:12px;border-bottom:1px solid var(--border);text-align:center;line-height:1.4}table.st td:first-child{text-align:left;font-weight:700;padding-left:14px}table.st tr:nth-child(even) td{background:var(--surface2)}table.st tr:hover td{background:var(--accent-soft)}
+.ib{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:14px;box-shadow:var(--sh)}.ib h4{font-size:13px;font-weight:800;color:var(--teal);margin-bottom:8px}.ib ul{padding-left:20px;font-size:12px;line-height:1.7;color:var(--text2)}.ib li{margin-bottom:4px}.ib li b{color:var(--text);font-weight:800}
+.co{padding:16px 18px;border-radius:var(--r);margin-bottom:14px;font-size:12px;line-height:1.65}.co.t{background:var(--accent-soft);border:1px solid rgba(25,117,137,.2)}.co.o{background:var(--orange-soft);border:1px solid rgba(245,156,54,.25);color:#6b4e00}.co.g{background:var(--green-soft);border:1px solid rgba(88,130,52,.2);color:#3d5a1e}
+.sp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.spc{background:var(--surface);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh)}.spc h4{font-size:13px;font-weight:800;margin-bottom:5px}.spc p{font-size:12px;color:var(--text2);line-height:1.5;font-style:italic;margin-bottom:10px}.spc ul{padding-left:18px;font-size:12px;line-height:1.7;color:var(--text2)}
+.wcc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px 20px;box-shadow:var(--sh);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;min-height:180px;margin-bottom:16px}.ww{cursor:default;transition:transform .15s;line-height:1.2;white-space:nowrap}.ww:hover{transform:scale(1.15)}
+.th-hero{background:linear-gradient(135deg,#14626e,var(--teal));color:#fff;border-radius:var(--r2);padding:30px 28px;margin-bottom:18px;text-align:center;box-shadow:var(--sh2)}.th-hero h2{font-size:24px;font-weight:800;margin-bottom:8px;letter-spacing:.5px}.th-hero p{font-size:14px;opacity:.8;line-height:1.55;max-width:700px;margin:0 auto}
+.th-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.th-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:20px 22px;box-shadow:var(--sh);position:relative;overflow:hidden}.th-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px}
+.th-card.tl::before{background:var(--teal)}.th-card.or::before{background:var(--orange)}.th-card.gr::before{background:var(--green)}.th-card.dk::before{background:var(--teal-dk)}
+.th-card .icon{font-size:24px;margin-bottom:6px}.th-card h3{font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px}.th-card p{font-size:12px;color:var(--text2);line-height:1.65}
+.th-trend{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:20px 22px;box-shadow:var(--sh);margin-bottom:12px;display:flex;align-items:flex-start;gap:18px}
+.th-trend .rank{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;flex-shrink:0}
+.th-trend h3{font-size:15px;font-weight:800;color:var(--text);margin-bottom:4px}.th-trend .dir{font-size:10px;font-weight:700;padding:3px 12px;border-radius:10px;display:inline-block;margin-bottom:8px}.th-trend p{font-size:12px;color:var(--text2);line-height:1.6}
+.th-quote{background:var(--surface);border-left:4px solid var(--orange);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin-bottom:12px;box-shadow:var(--sh)}.th-quote .qt{font-size:14px;font-style:italic;color:var(--text);line-height:1.55;margin-bottom:8px}.th-quote .qa{font-size:11px;font-weight:700;color:var(--text3)}
+.th-bottom{background:linear-gradient(135deg,var(--orange),#e8873a);color:#fff;border-radius:var(--r2);padding:28px;margin-top:18px;box-shadow:var(--sh2)}.th-bottom h3{font-size:18px;font-weight:800;margin-bottom:10px}.th-bottom p{font-size:13px;line-height:1.7;opacity:.92}.th-bottom ul{padding-left:20px;font-size:13px;line-height:1.8;opacity:.92;margin-top:10px}
+.ft{margin-top:28px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);text-align:center}.ft p{font-size:10px;color:var(--text3)}
+@media(max-width:700px){.tg2,.sp,.th-grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.tab{font-size:11px;padding:10px 8px}.bl{width:100px;font-size:10px}}
+
+.dlbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:var(--r);padding:14px 18px;margin-bottom:16px;box-shadow:var(--sh)}
+.dlinfo{display:flex;align-items:center;gap:12px}
+.dlicon{width:38px;height:38px;object-fit:contain;display:block;flex-shrink:0}
+.dlt{font-size:14px;font-weight:800;color:var(--text)}
+.dls{font-size:11px;color:var(--text3);margin-top:2px;line-height:1.4}
+.dlbtn{background:var(--orange);color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:10px 20px;border-radius:var(--r);white-space:nowrap;box-shadow:var(--sh);transition:.15s;display:inline-flex;align-items:center}
+.dlbtn:hover{background:var(--orange-dk);box-shadow:var(--sh2)}
+@media(max-width:600px){.dlbar{justify-content:center;text-align:center}.dlinfo{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<div class="app" id="root"></div>
+<script>
+var C={teal:'#197589',green:'#588234',orange:'#f59c36',tealDk:'#0d4f5e',tealLt:'#2a9bb5',tealMu:'#4a7a86',greenDk:'#3d5a24',orangeDk:'#c07820',orangeDp:'#9e6a30'};
+var TH=[
+{nm:'Financial Sustainability, Cost, and Debt',sh:'Financial Sustainability',ct:18,pc:78,co:C.orangeDk,sg:'Universal',kw:['tuition','student debt','state funding','Medicaid','NIH funding','budget']},
+{nm:'Faculty Recruitment and Retention',sh:'Faculty Recruitment',ct:11,pc:48,co:C.orange,sg:'Strong',kw:['compensation gap','vacancy rate','salary','private practice','retention','culture']},
+{nm:'Interprofessional Education and Integration',sh:'Interprofessional Ed.',ct:11,pc:48,co:C.teal,sg:'Strong',kw:['IPE','COVID collaboration','Epic/Wisdom','simulation','team-based care']},
+{nm:'AI and Digital Technology',sh:'AI and Digital Tech',ct:10,pc:43,co:C.tealDk,sg:'Emerging',kw:['AI Institute','GPU clusters','digital workflows','CAD/CAM','data science']},
+{nm:'Access to Care and Workforce Distribution',sh:'Access to Care',ct:8,pc:35,co:C.green,sg:'Strong',kw:['underserved','rural','Medicaid','FQHCs','outmigration']},
+{nm:'School and Organized Dentistry Relationship',sh:'School + Org. Dentistry',ct:7,pc:30,co:C.tealLt,sg:'Ext only',kw:['ADA','membership','advocacy','faculty modeling','tripartite']},
+{nm:'Communication and Perception Gap',sh:'Communication Gap',ct:5,pc:22,co:C.tealMu,sg:'Internal',kw:['proactive requests','salary benchmarking','narrative','unrealized potential']},
+{nm:'Curriculum Compression and Competency',sh:'Curriculum Debates',ct:4,pc:17,co:C.orangeDp,sg:'Mixed',kw:['3-year model','hand skills','competency-based','DMD/PhD']},
+{nm:'DSO and Changing Practice Models',sh:'DSOs + Practice Models',ct:3,pc:13,co:C.greenDk,sg:'Ext only',kw:['DSO','7 to 8 year pathway','practice ownership']}
+];
+var WC=[{t:'tuition',w:15},{t:'student debt',w:14},{t:'faculty',w:13},{t:'AI',w:13},{t:'Medicaid',w:11},{t:'collaboration',w:11},{t:'access to care',w:10},{t:'recruitment',w:10},{t:'interprofessional',w:10},{t:'salary',w:9},{t:'trust',w:9},{t:'compliance',w:8},{t:'DSO',w:8},{t:'workforce',w:8},{t:'curriculum',w:8},{t:'advocacy',w:8},{t:'digital',w:8},{t:'Epic',w:7},{t:'clinical',w:7},{t:'mentorship',w:7},{t:'community',w:7},{t:'funding',w:8},{t:'research',w:8},{t:'competency',w:6},{t:'ADA',w:6},{t:'innovation',w:6},{t:'underserved',w:6},{t:'reimbursement',w:6},{t:'leadership',w:6},{t:'accreditation',w:6},{t:'licensure',w:5},{t:'retention',w:5},{t:'simulation',w:5},{t:'outmigration',w:5},{t:'professionalism',w:5},{t:'FQHCs',w:4},{t:'loan forgiveness',w:4},{t:'narrative',w:4},{t:'GPR',w:3}];
+var WCC=[C.teal,C.orangeDk,C.green,C.orange,C.tealDk,C.greenDk,C.tealLt,C.tealMu,C.orangeDp,C.teal,C.green];
+function bg(s){return s==='Universal'?'u':s==='Strong'?'s':s==='Emerging'?'e':s.indexOf('Ext')>=0?'x':s==='Mixed'?'r':'n';}
+function render(){
+var h='';
+h+='<div class="hdr"><div class="hdr-l"><div class="am"><div class="wm">ADEA</div><div class="tg">THE VOICE OF DENTAL EDUCATION</div></div><div class="hdiv"></div><div class="ht"><svg width="28" height="34" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 2L6 21h9.5l-2.5 15L27 16H17L19.5 2z" fill="#f59c36" stroke="#e08a20" stroke-width=".6" stroke-linejoin="round"/></svg><div><h1>FULL VOLTAGE</h1><div class="ht-sub">ADEA Leadership Institute 2026 to 27 | Thematic Analysis</div></div></div></div><div class="hdr-r"><div class="ch a">23 Interviewees</div><div class="ch b">5 Institutions</div><div class="ch c">9 Themes</div></div></div>';
+h+='<div class="dlbar"><div class="dlinfo"><img class="dlicon" src="data:image/png;base64,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" alt="Word document icon"><div><div class="dlt">Full Interviews Summary</div><div class="dls">Complete written report, formatted for distribution and review</div></div></div><a class="dlbtn" href="FULL_VOLTAGE_INTERVIEWS_SUMMARY.docx" download>&#x2B07;&nbsp; Download .docx</a></div>';
+h+='<div class="tabs"><div class="tab active" onclick="P(\'t1\',this)">Overview</div><div class="tab" onclick="P(\'t2\',this)">Deep Dive</div><div class="tab" onclick="P(\'t3\',this)">&#x26A1; Take Homes</div></div>';
+
+// === OVERVIEW ===
+h+='<div id="t1" class="pn active">';
+h+='<div class="metrics"><div class="mc"><div class="v">23</div><div class="l">Unique Interviewees</div></div><div class="mc"><div class="v">78%</div><div class="l">Top Theme Saturation</div></div><div class="mc"><div class="v">100%</div><div class="l">Positive Perception</div></div><div class="mc"><div class="v">4</div><div class="l">Trends Identified</div></div></div>';
+h+='<div class="sst">Theme Frequency: All 23 Interviewees</div>';
+h+='<div class="sd">Each bar shows how many of 23 unique interviewees raised a given theme. Sorted by frequency. Interviews span five institutions (Augusta, Rutgers, UIC, Michigan, Columbia) plus four state dental societies and three ADA Trustees.</div>';
+for(var i=0;i<TH.length;i++){var t=TH[i];h+='<div class="br"><div class="bl">'+t.sh+'</div><div class="bt"><div class="bi" style="width:'+t.pc+'%;background:'+t.co+'">'+t.ct+'</div></div><div class="bv">'+t.pc+'%</div></div>';}
+h+='<div class="sst" style="margin-top:22px">Word Cloud</div>';
+var sorted=WC.slice().sort(function(a,b){return b.w-a.w;});h+='<div class="wcc">';for(var i=0;i<sorted.length;i++){var w=sorted[i];var sz=Math.max(12,Math.min(44,w.w*3));var op=(0.5+(w.w/15)*0.5).toFixed(2);var fw=w.w>9?800:w.w>6?700:500;h+='<span class="ww" style="font-size:'+sz+'px;font-weight:'+fw+';color:'+WCC[i%WCC.length]+';opacity:'+op+'">'+w.t+'</span>';}h+='</div>';
+h+='<div class="sst">Scorecard by Theme</div>';
+h+='<div class="tg2">';for(var i=0;i<TH.length;i++){var t=TH[i];h+='<div class="tc" style="border-left-color:'+t.co+'"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px"><div class="nm">'+t.nm+'</div><span class="badge '+bg(t.sg)+'">'+t.sg+'</span></div><div class="pv" style="color:'+t.co+'">'+t.pc+'%</div><div class="ps">'+t.ct+' of 23 interviewees</div><div class="bf"><i style="width:'+t.pc+'%;background:'+t.co+'"></i></div><div class="tags">'+t.kw.map(function(k){return'<span class="tag">'+k+'</span>';}).join('')+'</div></div>';}h+='</div></div>';
+
+// === DEEP DIVE ===
+h+='<div id="t2" class="pn">';
+h+='<div class="sst">The Unanimous Finding, and Its Caveat</div>';
+h+='<div class="co t"><b>Every interviewee (23 of 23) expressed a positive perception of the dental school.</b> But the praise almost always came with a qualifier. The nature of the qualifier depends on who is speaking.</div>';
+h+='<div class="sw"><table class="st"><tr><th style="text-align:left">Qualifier After the Praise</th><th style="text-align:left">Who Said It</th><th>Count</th></tr>';
+h+='<tr><td>"...but they are not telling their own story effectively"</td><td>President, Provosts</td><td style="font-weight:800;color:var(--teal)">3</td></tr>';
+h+='<tr><td>"...but they face financial pressures that threaten quality"</td><td>ADA Trustees, Dental Society Dirs., Provost (Columbia)</td><td style="font-weight:800;color:var(--teal)">5</td></tr>';
+h+='<tr><td>"...but they have not asked me for what they need"</td><td>Provosts, VP Academic Affairs</td><td style="font-weight:800;color:var(--teal)">3</td></tr>';
+h+='<tr><td>"...but faculty recruitment is getting worse"</td><td>President, Provosts, GDA Dir.</td><td style="font-weight:800;color:var(--teal)">4</td></tr>';
+h+='<tr><td>"...but research output is not what it once was"</td><td>VPs Research (incl. Columbia)</td><td style="font-weight:800;color:var(--teal)">3</td></tr>';
+h+='<tr><td>"...but the school has not realized its potential"</td><td>EVP Research (Columbia)</td><td style="font-weight:800;color:var(--teal)">1</td></tr>';
+h+='</table></div>';
+
+h+='<div class="sst">The Two Conversations</div>';
+h+='<div class="sd">This is the most important pattern in the data. Internal leaders (n=16: presidents, provosts, VPs, CFO) and external leaders (n=7: ADA trustees, dental society directors) are asking fundamentally different questions about dental education.</div>';
+h+='<div class="sp"><div class="spc" style="border:2px solid var(--teal)"><h4 style="color:var(--teal)">Internal Frame (n=16)</h4><p>"How does the dental school fit within the university?"</p><ul><li>Faculty recruitment as institutional problem</li><li>AI and tech as research infrastructure</li><li>IPE as cross-college opportunity</li><li>Communication gap as solvable</li><li>Operational bottlenecks (HR, IT, IRB)</li><li>Trust and compliance as institutional priorities</li></ul></div>';
+h+='<div class="spc" style="border:2px solid var(--orange)"><h4 style="color:var(--orange)">External Frame (n=7)</h4><p>"Are graduates ready, and is the profession sustainable?"</p><ul><li>Cost and debt as existential threat</li><li>Access to care as moral imperative</li><li>DSOs as new career reality</li><li>Organized dentistry engagement</li><li>Curriculum and competency debates</li><li>Licensure pathways for foreign-trained dentists</li></ul></div></div>';
+h+='<div class="co o"><b>Key insight:</b> Three themes (DSOs, curriculum debates, school + organized dentistry) were raised by <b>zero university leaders</b>. These concerns are invisible upward. Dental schools are the only bridge between these two worlds.</div>';
+
+h+='<div class="sst">Financial Sustainability: Three Distinct Sub-Conversations</div>';
+h+='<div class="sd">This theme looks like consensus at 78%, but it is actually three different concerns sharing a label.</div>';
+h+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px">';
+h+='<div class="tc" style="border-left-color:'+C.orangeDk+'"><div class="nm">Student Debt Spiral</div><div style="font-size:11px;color:var(--text2);margin-top:8px;line-height:1.6">Raised by ADA Trustees and Dental Society Directors. Rising tuition reduces applicant quality, which reduces graduate quality, which deepens faculty shortages. NY State Dental Society reports costs of $400,000 to $500,000, with an oral surgery program in Buffalo closed due to high cost.</div></div>';
+h+='<div class="tc" style="border-left-color:'+C.orange+'"><div class="nm">Institutional Revenue Pressure</div><div style="font-size:11px;color:var(--text2);margin-top:8px;line-height:1.6">Raised by university leaders across all five institutions. Public dental schools described as "private schools with a state name." Columbia\'s provost cited reduced international enrollment directly affecting faculty salary. NIH dental materials funding called "extremely difficult."</div></div>';
+h+='<div class="tc" style="border-left-color:'+C.green+'"><div class="nm">Downstream Professional Effects</div><div style="font-size:11px;color:var(--text2);margin-top:8px;line-height:1.6">Raised by Dental Society Directors. Dues reduced for early-career members because the traditional structure feels prohibitive to debt-burdened graduates. NY State working on licensure bills to address workforce gaps.</div></div>';
+h+='</div>';
+
+h+='<div class="sst">AI Readiness: Institutional Variance</div>';
+h+='<div class="sd">Raised by 10 of 23, but the <b>variance across institutions</b> matters more than the frequency. No ADA Trustee raised it.</div>';
+h+='<div class="sw"><table class="st"><tr><th style="text-align:left">Institution</th><th style="text-align:left">Who Raised It</th><th>Stage</th><th style="text-align:left">Key Detail</th></tr>';
+h+='<tr><td>Columbia</td><td>EVP Research (Wing)</td><td><span class="badge s">Leading</span></td><td style="text-align:left">AI+X model across sciences, Data Science Institute with school-level reps, Chan-Zuckerberg BioHub ($250M), Empire AI ($500M)</td></tr>';
+h+='<tr><td>Augusta</td><td>EVP Research (Hess)</td><td><span class="badge s">Building</span></td><td style="text-align:left">AI Institute approved, Nvidia GPU clusters, Dept. of AI in Health</td></tr>';
+h+='<tr><td>Michigan</td><td>VP Research (Lupia)</td><td><span class="badge e">Coordinating</span></td><td style="text-align:left">AI coordination committee evolved into AIIM</td></tr>';
+h+='<tr><td>UIC</td><td>VC Research (Groden)</td><td><span class="badge x">Governing</span></td><td style="text-align:left">AI restricted in grants, manuscripts, human subjects; complex regs</td></tr>';
+h+='<tr><td>Rutgers</td><td>VP Research (Scotto)</td><td><span class="badge r">Lagging</span></td><td style="text-align:left">"We are behind, behind the Big Ten at least"</td></tr>';
+h+='</table></div>';
+
+h+='<div class="sst">Access to Care: The Numbers</div>';
+h+='<div class="sd w"><b>86% of external stakeholders raised access to care, but only 13% of internal leaders did.</b> Dental schools are doing heroic community work that their own university leadership does not fully see.</div>';
+h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px">';
+h+='<div class="co t" style="text-align:center"><div style="font-size:30px;font-weight:800;color:var(--teal)">40%</div><div style="font-size:11px;margin-top:4px;color:var(--text2)">of DCG grads leave Georgia (GDA)</div></div>';
+h+='<div class="co t" style="text-align:center"><div style="font-size:30px;font-weight:800;color:var(--teal)">75%</div><div style="font-size:11px;margin-top:4px;color:var(--text2)">of IL Medicaid kids seen at UIC</div></div>';
+h+='<div class="co t" style="text-align:center"><div style="font-size:30px;font-weight:800;color:var(--teal)">48th</div><div style="font-size:11px;margin-top:4px;color:var(--text2)">IL Medicaid dental reimbursement rank</div></div>';
+h+='<div class="co t" style="text-align:center"><div style="font-size:30px;font-weight:800;color:var(--teal)">$400K+</div><div style="font-size:11px;margin-top:4px;color:var(--text2)">dental education cost cited by NY State</div></div>';
+h+='</div>';
+
+h+='<div class="sst">What Is Not Being Said</div>';
+h+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px">';
+h+='<div class="co o"><b>DEI largely absent.</b> Only 3 interviewees touched on diversity and inclusion explicitly.</div>';
+h+='<div class="co o"><b>Accreditation = negative only.</b> Columbia received an accreditation warning on student/faculty support and academic decision-making. Where mentioned elsewhere, CODA and LCME described as focused on minutiae over innovation.</div>';
+h+='<div class="co o"><b>Student wellness invisible.</b> Despite prominence in medical education, student mental health was barely raised across 23 interviews.</div>';
+h+='</div>';
+
+h+='<div class="sst">Cross-Institutional Patterns</div>';
+h+='<div class="sw"><table class="st"><tr><th style="text-align:left">&nbsp;</th><th>Augusta</th><th>Rutgers</th><th>UIC</th><th>Michigan</th><th>Columbia</th></tr>';
+h+='<tr><td>Dominant concern</td><td>Faculty recruitment</td><td>Financial sustainability</td><td>IPE + community mission</td><td>Curriculum + competency</td><td>Trust + financial sustainability</td></tr>';
+h+='<tr><td>AI stage</td><td>Building (GPU, AI Institute)</td><td>Behind ("behind the Big Ten")</td><td>Governing (complex regs)</td><td>Coordinating (AIIM)</td><td>Leading (AI+X, $500M Empire AI)</td></tr>';
+h+='<tr><td>IPC readiness</td><td>Moderate (IP Sim Center)</td><td>Moderate (joint programs)</td><td>High (COVID, Epic)</td><td>High (Health Sciences Council)</td><td>High (multi-sector collaborations)</td></tr>';
+h+='<tr><td>Unique strength</td><td>Savannah expansion, President cultural vision</td><td>CFO matrixed coordination, NJDA partnership</td><td>Medicaid safety-net, Epic integration</td><td>AI coordination (AIIM)</td><td>Multi-sector collaborations (BioHub, Empire AI)</td></tr>';
+h+='<tr><td>Key vulnerability</td><td>Communication gap with admin</td><td>AI readiness lagging</td><td>Federal funding uncertainty</td><td>New school proliferation</td><td>Post-crisis trust, dental research intensity</td></tr>';
+h+='</table></div>';
+h+='</div>';
+
+// === TAKE HOMES ===
+h+='<div id="t3" class="pn">';
+h+='<div class="th-hero"><h2>The Take Homes</h2><p>23 interviews, 5 institutions, distilled to what matters. What do people really think? Where is this heading? What should dental schools do?</p></div>';
+h+='<div class="sst">What Everyone Agrees On</div>';
+h+='<div class="th-grid">';
+h+='<div class="th-card tl"><div class="icon">&#x1F44D;</div><h3>They Love the Dental School</h3><p>23 of 23 interviewees expressed a positive perception. Provosts call them "strategic assets." A VP called them "crown jewels." Columbia\'s EVP Research was "very impressed" by the dental clinic. <b>But</b> the praise always comes with a "but."</p></div>';
+h+='<div class="th-card or"><div class="icon">&#x1F4B8;</div><h3>The Money Problem Is Real</h3><p>78% raised financial sustainability. Tuition keeps climbing, state funding keeps shrinking, student debt keeps compounding. NY State Dental Society reports costs of $400,000 to $500,000. One program in Buffalo closed due to high cost. Columbia\'s provost cited declining international enrollment directly hitting faculty salary.</p></div>';
+h+='<div class="th-card or"><div class="icon">&#x1F468;&#x200D;&#x1F3EB;</div><h3>Faculty Are the Backbone, and They Are Leaving</h3><p>48% raised faculty recruitment. The pay gap between academia and private practice is the #1 barrier. One president said DCG has had the same number of vacancies for too long. GDA members ranked faculty salaries as their top concern unanimously.</p></div>';
+h+='<div class="th-card gr"><div class="icon">&#x1F91D;</div><h3>We Should Work Together More</h3><p>Every external stakeholder wants deeper collaboration with the dental school. Every university leader wants more interdisciplinary work. Columbia\'s dental school created a DMD/PhD with engineering. The desire is universal. The execution is where it breaks down.</p></div></div>';
+h+='<div class="sst">What Keeps Them Up at Night</div>';
+h+='<div class="th-quote"><div class="qt">"You are gonna see less applicants to choose from, and then the quality of the graduates will go down."</div><div class="qa">ADA Trustee, on tuition rising unchecked</div></div>';
+h+='<div class="th-quote"><div class="qt">"He has been unable to retire for two years because he cannot find a successor, leaving a town of 2,000 people facing potential loss of their only dental provider."</div><div class="qa">ADA Trustee, on rural workforce crisis in Illinois</div></div>';
+h+='<div class="th-quote"><div class="qt">"Higher education has lost trust."</div><div class="qa">EVP Research (Columbia), on the compliance and credibility crisis</div></div>';
+h+='<div class="th-quote"><div class="qt">"Our government is not a reliable partner, our grant funding has been affected."</div><div class="qa">Provost (Columbia), on federal funding uncertainty</div></div>';
+h+='<div class="th-quote"><div class="qt">"We are behind, behind the Big Ten at least."</div><div class="qa">VP Research, on AI readiness</div></div>';
+h+='<div class="th-quote"><div class="qt">"I have not received a concrete request regarding salary competitiveness. I cannot advocate without them."</div><div class="qa">Provost, on the communication gap with the dental school</div></div>';
+h+='<div class="sst">The 4 Trends That Will Reshape Dental Education</div>';
+h+='<div class="th-trend"><div class="rank" style="background:var(--teal-dk)">1</div><div><h3>AI and Digital Transformation</h3><div class="dir" style="background:rgba(13,79,94,.12);color:var(--teal-dk)">FAST AND UNEVEN</div><p>Every institution is grappling with this, but at wildly different stages. Columbia leads with an AI+X model, a Data Science Institute, and multi-hundred-million-dollar collaborations like the Chan-Zuckerberg BioHub and Empire AI. Augusta is building an AI Institute with GPU clusters. Michigan is coordinating through AIIM. Rutgers admits it is behind. UIC is wrestling with governance. The schools that invest now will pull ahead. <b>No ADA Trustee even mentioned AI.</b></p></div></div>';
+h+='<div class="th-trend"><div class="rank" style="background:var(--green)">2</div><div><h3>Workforce Restructuring and the Access Crisis</h3><div class="dir" style="background:var(--green-soft);color:var(--green)">CONVERGING FORCES</div><p>Not one problem but four at once. Graduates default into DSOs for 7 to 8 years before going independent. 40% of DCG grads leave Georgia. Rural towns cannot find successors for retiring dentists. Dental hygiene cannot compete with careers requiring less training and equal pay. GDA projects a meaningful shortage in 5 to 7 years. NY State is pursuing legislative solutions, including licensure pathways for foreign-trained dentists working in underserved areas.</p></div></div>';
+h+='<div class="th-trend"><div class="rank" style="background:var(--teal)">3</div><div><h3>Interprofessional Integration</h3><div class="dir" style="background:var(--accent-soft);color:var(--teal)">CLEAR DIRECTION, SLOW PACE</div><p>COVID proved the model overnight. Dentists, nurses, and physicians worked side by side giving 160,000 vaccinations at UIC. Epic/Wisdom is connecting dental records to hospital systems. Columbia promotes multi-sector collaboration across disciplines, from NYC to NY state and the federal government. But curricula are packed and nobody has bandwidth. The direction is unmistakable. The pace depends on who makes room for it.</p></div></div>';
+h+='<div class="th-trend"><div class="rank" style="background:var(--orange)">4</div><div><h3>Federal Funding Uncertainty and the Trust Crisis</h3><div class="dir" style="background:var(--orange-soft);color:var(--orange-dk)">VOLATILE AND CONSEQUENTIAL</div><p>Government funding is no longer a given. Columbia\'s provost said directly: "Our government is not a reliable partner." Research VPs at UIC and Michigan cite the changing federal landscape as a top concern. Columbia is managing fallout from a major institutional crisis that resulted in an accreditation warning. Wing states it plainly: "Higher education has lost trust." The institutions that build transparent, compliance-first cultures and diversify revenue sources will weather this better.</p></div></div>';
+h+='<div class="sst">The Biggest Surprise</div>';
+h+='<div class="th-card or" style="border:2px solid var(--orange);margin-bottom:18px"><div class="icon">&#x1F50D;</div><h3>University Leaders and Profession Leaders Are Having Two Different Conversations</h3><p style="margin-bottom:10px">Internal leaders ask: <i>"How does the dental school fit within the university?"</i> They talk about AI infrastructure, interdisciplinary research, trust, compliance, and operational efficiency.</p><p style="margin-bottom:10px">External leaders ask: <i>"Are graduates ready, and is the profession sustainable?"</i> They talk about student debt, DSOs, rural access, licensure reform, and organized dentistry engagement.</p><p><b>Three themes (DSOs, curriculum debates, school + organized dentistry) were raised by ZERO university leaders.</b> Dental schools are the only bridge between these two worlds, and right now the bridge has gaps.</p></div>';
+h+='<div class="sst">What They Want From Dental Schools</div>';
+h+='<div class="th-grid">';
+h+='<div class="th-card tl"><div class="icon">&#x1F4E3;</div><h3>Tell Your Story Better</h3><p>Multiple presidents and provosts said the dental school has a compelling narrative (oral health as the gateway to all health, the safety-net role) but does not communicate it with enough force or consistency.</p></div>';
+h+='<div class="th-card or"><div class="icon">&#x1F4CB;</div><h3>Ask For What You Need</h3><p>Several provosts said explicitly: "I cannot advocate for resources I do not know are needed." Bring salary benchmarking data, structured recruitment plans, and specific dollar requests. The door is open.</p></div>';
+h+='<div class="th-card dk"><div class="icon">&#x1F916;</div><h3>Get In the AI Game Now</h3><p>VPs for Research are building AI institutes and hiring data scientists. Columbia is investing at the hundreds-of-millions scale. If dental schools do not participate, they will be left out of the infrastructure and the funding.</p></div>';
+h+='<div class="th-card gr"><div class="icon">&#x1F393;</div><h3>Bring Students to Organized Dentistry Earlier</h3><p>Every ADA Trustee and Dental Society Director said the same thing: integrate the ADA from year one, not as a graduation-year pitch. Faculty must model professional engagement.</p></div></div>';
+h+='<div class="th-bottom"><h3>&#x26A1; Bottom Line</h3><p>Dental schools are deeply valued but strategically underleveraged. The financial model is eroding. The workforce is restructuring. Technology is transforming everything. Public trust in higher education is fraying. The schools that will thrive are the ones that:</p><ul><li>Communicate their value upward with data, not just goodwill</li><li>Invest in AI and digital infrastructure before it is too late</li><li>Prepare graduates for the workforce that actually exists</li><li>Deepen partnerships with organized dentistry starting in year one</li><li>Build cultures of transparency and compliance that restore trust</li><li>Tell their story relentlessly</li></ul></div>';
+h+='</div>';
+h+='<div class="ft"><p>Full Voltage Peer Group | ADEA Leadership Institute Class of 2026 to 27 | Thematic Analysis | June 2026</p></div>';
+document.getElementById('root').innerHTML=h;
+}
+function P(id,el){var panes=document.querySelectorAll('.pn');for(var i=0;i<panes.length;i++)panes[i].classList.remove('active');var tabs=document.querySelectorAll('.tab');for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('active');document.getElementById(id).classList.add('active');el.classList.add('active');}
+render();
+<\/script>
+</body>
+</html>
+</script>
+
+<script>
+var META={
+  planning:{name:"Initial Planning",chip:"Phase I",cls:"one",frame:"if-planning",tpl:"src-planning"},
+  summary :{name:"Interviews' Summary",chip:"Phase II",cls:"two",frame:"if-summary",tpl:"src-summary"}
+};
+var loaded={};
+function loadFrame(key){
+  if(loaded[key])return;
+  var raw=document.getElementById(META[key].tpl).textContent;
+  // restore the escaped closing tags from the raw-text container
+  var html=raw.split('<\\/script>').join('<'+'/script>');
+  document.getElementById(META[key].frame).srcdoc=html;
+  loaded[key]=true;
+}
+function go(key){
+  if(key==='home'){location.hash='';return;}
+  location.hash='#'+key;
+}
+function route(){
+  var key=(location.hash||'').replace('#','');
+  var home=document.getElementById('home');
+  var frame=document.getElementById('frame');
+  if(key!=='planning'&&key!=='summary'){
+    frame.classList.remove('active');
+    home.classList.add('active');
+    document.title="Full Voltage / ADEA Leadership Institute";
+    window.scrollTo(0,0);
+    return;
+  }
+  var m=META[key];
+  loadFrame(key);
+  // toggle iframes
+  ['planning','summary'].forEach(function(k){
+    document.getElementById(META[k].frame).classList.toggle('active',k===key);
+  });
+  document.getElementById('navName').textContent=m.name;
+  var chip=document.getElementById('navChip');
+  chip.textContent=m.chip;
+  chip.className='nav-chip '+m.cls;
+  home.classList.remove('active');
+  frame.classList.add('active');
+  document.title="Full Voltage / "+m.name;
+}
+window.addEventListener('hashchange',route);
+route();
 </script>
 </body>
 </html>
